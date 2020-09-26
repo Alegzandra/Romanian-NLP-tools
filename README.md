@@ -1,7 +1,7 @@
 # Romanian-NLP-tools
 A list of Natural Language Processing Tools for the Romanian language
 
-![](https://cdn.imgbin.com/23/11/11/imgbin-artificial-intelligence-chatbot-conversation-natural-language-processing-technology-technology-bJc1m5931VU2rK64Bi0AvxyEH.jpg)
+![](https://www.finextra.com/finextra-images/top_pics/xl/natural-language-processing.png)
 
 ## Stemmer
 
