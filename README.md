@@ -1,6 +1,8 @@
 # Romanian-NLP-tools
 A list of Natural Language Processing Tools for the Romanian language
 
+![](https://cdn.imgbin.com/23/11/11/imgbin-artificial-intelligence-chatbot-conversation-natural-language-processing-technology-technology-bJc1m5931VU2rK64Bi0AvxyEH.jpg)
+
 ## Stemmer
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install nltk.
