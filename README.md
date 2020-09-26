@@ -9,7 +9,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install nltk.
 pip install nltk
 ```
 
-### Usage
+#### Usage
 
 ```python
 from nltk.stem.snowball import SnowballStemmer
@@ -24,7 +24,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install spacy a
 pip install spacy spacy-stanza
 ```
 
-### Usage
+#### Usage
 
 ```python
 import stanza
