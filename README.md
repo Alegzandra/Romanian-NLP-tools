@@ -52,7 +52,6 @@ pip install rowordnet
 
 ```python
 import rowordnet
-from rowordnet import Synset
 
 wordnet = rowordnet.RoWordNet()
 word = 'arbore'
