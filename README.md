@@ -39,5 +39,24 @@ for token in doc:
 print(doc.ents)
 ```
 
-For more info visit [Spacy-stanza](https://spacy.io/universe/project/spacy-stanza).
+For more info visit [https://spacy.io/universe/project/spacy-stanza](https://spacy.io/universe/project/spacy-stanza).
 
+## RoWordnet
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install rowordnet.
+
+```bash
+pip install rowordnet
+```
+
+#### Usage
+
+```python
+import rowordnet
+from rowordnet import Synset
+
+wordnet = rowordnet.RoWordNet()
+word = 'arbore'
+synset_ids = wordnet.synsets(literal=word)
+wordnet.print_synset(synset_ids[0])
+```
+For more info visit [https://github.com/dumitrescustefan/RoWordNet](https://github.com/dumitrescustefan/RoWordNet).
