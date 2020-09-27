@@ -38,7 +38,6 @@ nlp = StanzaLanguage(snlp)
 doc = nlp("Această propoziție este în limba română.")
 for token in doc:
     print(token.text, token.lemma_, token.pos_)
-print(doc.ents)
 ```
 
 For more info visit [https://spacy.io/universe/project/spacy-stanza](https://spacy.io/universe/project/spacy-stanza).
