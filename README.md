@@ -61,6 +61,20 @@ wordnet.print_synset(synset_ids[0])
 ```
 For more info visit [https://github.com/dumitrescustefan/RoWordNet](https://github.com/dumitrescustefan/RoWordNet).
 
+# BERT for Romanian
+```python
+from transformers import BertModel, BertTokenizer
+# load tokenizer and model
+tokenizer = AutoTokenizer.from_pretrained("dumitrescustefan/bert-base-romanian-cased-v1")
+model = AutoModel.from_pretrained("dumitrescustefan/bert-base-romanian-cased-v1")
+# tokenize a sentence and run through the model
+input_ids = torch.tensor(tokenizer.encode("Acesta este un test.", add_special_tokens=True)).unsqueeze(0)  # Batch size 1
+outputs = model(input_ids)
+# get encoding
+last_hidden_states = outputs[0]  # The last hidden-state is the first element of the output tuple
+```
+For more info visit [https://huggingface.co/dumitrescustefan/bert-base-romanian-cased-v1](https://huggingface.co/dumitrescustefan/bert-base-romanian-cased-v1).
+
 # Lingvistic resources
 - List of (all, I hope) romanian words - from [here](https://raw.githubusercontent.com/Alegzandra/romanian_word_family/master/lista_cuvinte.txt)
 - List of prefixes - from [here](https://raw.githubusercontent.com/Alegzandra/romanian_word_family/master/lista_prefixe.txt)
