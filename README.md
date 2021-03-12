@@ -54,6 +54,7 @@ print("is alpha: ", [token.is_alpha for token in doc])
 print("is punctuation: ", [token.is_punct for token in doc])
 print("is like_num: ", [token.like_num for token in doc])
 ```
+Output:
 ```output
 Index:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 Text:  ['Aceasta', 'este', 'propoziția', 'mea', ':', 'eu', 'am', '7', 'mere', ',', 'ce', 'să', 'fac', 'cu', 'ele', '?']
@@ -72,6 +73,7 @@ doc = nlp("Ea a mâncat pizza")
 for token in doc:
     print('{:<12}{:<10}{:<10}{:<10}'.format(token.text, token.pos_, token.dep_, token.head.text))
 ```
+Output:
 ```output
 Ea          PRON      nsubj     mâncat    
 a           AUX       aux       mâncat    
@@ -90,6 +92,7 @@ doc = nlp("Iulia Popescu, cea din Constanta, s-a dus la Lidl să cumpere pâine.
 for ent in doc.ents:
     print(ent.text, ent.label_)
 ```
+Output:
 ```output
 Iulia Popescu PERSON
 Constanta GPE
