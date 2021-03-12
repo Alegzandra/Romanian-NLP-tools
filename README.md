@@ -113,7 +113,7 @@ matcher = Matcher(nlp.vocab)
 #create doc object
 doc = nlp("Caracteristicile aplicației includ un design frumos, căutare inteligentă, etichete automate și răspunsuri vocale opționale.")
 #create pattern for adjective plus one or two nouns
-pattern = [{'POS': 'NOUN'}, {'POS': 'ADJ'}, {'POS': 'NOUN', 'OP': '?'}]
+pattern = [{'POS': 'NOUN'}, {'POS': 'ADJ'}, {'POS': 'ADJ', 'OP': '?'}]
 #add the pattern to the matcher
 matcher.add('QUALITIES', [pattern])
 #apply mather on doc
@@ -127,7 +127,7 @@ Output:
 design frumos
 căutare inteligentă
 etichete automate
-răspunsuri vocale
+răspunsuri vocale opționale
 ```
 ## RoWordnet
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install rowordnet.
