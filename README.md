@@ -19,7 +19,7 @@ stemmer = SnowballStemmer("romanian")
 print(stemmer.stem("alergare"))
 ```
 
-## Tokeniser, Lemmatiser and POS
+## Tokeniser, Lemmatiser and POS (Part-Of-Speech)
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install spacy and spacy-stanza.
 
 ```bash
