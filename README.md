@@ -1,7 +1,7 @@
 # Romanian-NLP-tools
 A list of Natural Language Processing Tools for the Romanian language
 
-![](https://www.finextra.com/finextra-images/top_pics/xl/natural-language-processing.png)
+
 
 ## Stemmer
 
