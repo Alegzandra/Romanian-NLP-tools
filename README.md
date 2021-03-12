@@ -1,6 +1,9 @@
 # Romanian-NLP-tools
-A list of Natural Language Processing Tools for the Romanian language
+A list of Natural Language Processing Tools for the Romanian language.   
+I try to keep this list up-to-date, as technologies evolve over time.
 
+***Any feedback to this repository is greatly appreciated.
+All suggestions are welcome!***
 
 
 ## Stemmer
@@ -173,5 +176,4 @@ For more info visit [https://huggingface.co/dumitrescustefan/bert-base-romanian-
 
 *RoSentiWordNet* is a lexical resource in which each RoWordNet synset is associated to three numerical scores Obj(s), Pos(s) and Neg(s), describing how objective, positive, and negative the terms contained in the synset are. It was created by translating SentiWordnet into Romanian using googletrans Python library.
 
-***Any feedback to this repository is greatly appreciated.
-All suggestions are welcome!***
+
