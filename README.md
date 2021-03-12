@@ -42,6 +42,93 @@ for token in doc:
 
 For more info visit [https://spacy.io/universe/project/spacy-stanza](https://spacy.io/universe/project/spacy-stanza).
 
+## SpaCy
+### Create Doc objects and play with its tokens:
+```python
+from spacy.lang.ro import Romanian
+nlp = Romanian()
+doc = nlp("Aceasta este propoziția mea: eu am 7 mere, ce să fac cu ele?")
+print("Index: ", [token.i for token in doc])
+print("Text: ", [token.text for token in doc])
+print("is alpha: ", [token.is_alpha for token in doc])
+print("is punctuation: ", [token.is_punct for token in doc])
+print("is like_num: ", [token.like_num for token in doc])
+```
+```output
+Index:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+Text:  ['Aceasta', 'este', 'propoziția', 'mea', ':', 'eu', 'am', '7', 'mere', ',', 'ce', 'să', 'fac', 'cu', 'ele', '?']
+is alpha:  [True, True, True, True, False, True, True, False, True, False, True, True, True, True, True, False]
+is punctuation:  [False, False, False, False, True, False, False, False, False, True, False, False, False, False, False, True]
+is like_num:  [False, False, False, False, False, False, False, True, False, False, False, False, False, False, False, False]
+```
+
+### Search for POS and dependencies:
+```python
+import spacy
+from spacy.lang.ro.examples import sentences
+#load pre-trained romanian model
+nlp = spacy.load("ro_core_news_sm")
+doc = nlp("Ea a mâncat pizza")
+for token in doc:
+    print('{:<12}{:<10}{:<10}{:<10}'.format(token.text, token.pos_, token.dep_, token.head.text))
+```
+```output
+Ea          PRON      nsubj     mâncat    
+a           AUX       aux       mâncat    
+mâncat      VERB      ROOT      mâncat    
+pizza       ADV       obj       mâncat 
+```
+### Predict Named Entities:
+```python
+import spacy
+from spacy.lang.ro.examples import sentences
+
+nlp = spacy.load("ro_core_news_sm")
+
+doc = nlp("Iulia Popescu, cea din Constanta, s-a dus la Lidl să cumpere pâine. Pe drum și-a dat seama că are nevoie de 50 de lei așa că a trecut și pe la bancomat înainte.")
+
+for ent in doc.ents:
+    print(ent.text, ent.label_)
+```
+```output
+Iulia Popescu PERSON
+Constanta GPE
+Lidl LOC
+50 de lei MONEY
+```
+### Rule-based Matching
+Matching can be done by handlers: LEMMA, POS, TEXT, IS_DIGIT, IS_PUNCT, LOWER, UPPER, OP.  
+The OP handler can have the following values:
+- '!' = never
+- '?' = never or once
+- '+' = once or more times
+- '*' = never or more times
+```python
+import spacy
+from spacy.matcher import Matcher
+#load pre-trained romanian model
+nlp = spacy.load('ro_core_news_sm')
+#create matcher
+matcher = Matcher(nlp.vocab)
+#create doc object
+doc = nlp("Caracteristicile aplicației includ un design frumos, căutare inteligentă, etichete automate și răspunsuri vocale opționale.")
+#create pattern for adjective plus one or two nouns
+pattern = [{'POS': 'NOUN'}, {'POS': 'ADJ'}, {'POS': 'NOUN', 'OP': '?'}]
+#add the pattern to the matcher
+matcher.add('QUALITIES', [pattern])
+#apply mather on doc
+matches = matcher(doc)
+for match_id, start, end in matches:
+    matched_span = doc[start:end]
+    print(matched_span.text)
+```
+Output:
+```output
+design frumos
+căutare inteligentă
+etichete automate
+răspunsuri vocale
+```
 ## RoWordnet
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install rowordnet.
 
