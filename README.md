@@ -174,7 +174,7 @@ For more info visit [https://huggingface.co/dumitrescustefan/bert-base-romanian-
 ```python
 import fasttext.util
 fasttext.util.download_model('ro', if_exists='ignore')
-ft = fasttext.load_model('cc.ro.300.bin')
+ft = fasttext.load_model('path/to/cc.ro.300.bin')
 ```
 or download from [here](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.ro.300.bin.gz).  
 More info on usage here: [https://fasttext.cc/docs/en/crawl-vectors.html](https://fasttext.cc/docs/en/crawl-vectors.html).  
