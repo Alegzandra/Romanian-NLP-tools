@@ -168,7 +168,19 @@ last_hidden_states = outputs[0]  # The last hidden-state is the first element of
 ```
 For more info visit [https://huggingface.co/dumitrescustefan/bert-base-romanian-cased-v1](https://huggingface.co/dumitrescustefan/bert-base-romanian-cased-v1).
 
-# Lingvistic resources
+# Word Vectors
+
+## fastText
+```python
+import fasttext.util
+fasttext.util.download_model('ro', if_exists='ignore')
+ft = fasttext.load_model('cc.ro.300.bin')
+```
+or download from [here](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.ro.300.bin.gz).  
+More info on usage here: [https://fasttext.cc/docs/en/crawl-vectors.html](https://fasttext.cc/docs/en/crawl-vectors.html).  
+## word2vec
+from here: [https://github.com/senisioi/ro_resources](https://github.com/senisioi/ro_resources).  
+# Other Lingvistic resources
 - List of (all, I hope) romanian words - from [here](https://raw.githubusercontent.com/Alegzandra/romanian_word_family/master/lista_cuvinte.txt)
 - List of prefixes - from [here](https://raw.githubusercontent.com/Alegzandra/romanian_word_family/master/lista_prefixe.txt)
 - List of suffixes - from [here](https://raw.githubusercontent.com/Alegzandra/romanian_word_family/master/lista_sufixe.txt)
